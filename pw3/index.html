@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Trivia — Questions and discoveries</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">W</span> World Trivia</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#trivia">Trivia</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#scores">Scores</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="home" aria-labelledby="home-title">
+      <div class="intro">
+        <h1 id="home-title">World Trivia</h1>
+        <p>Follow a river from orbit, look for a storm on Jupiter, or step back to the first Moon landing. Pick a question and see what you know.</p>
+        <a class="action" href="#trivia">Try a question</a>
+      </div>
+      <figure class="cover">
+        <img src="images/earth.webp" alt="Earth from space, with Africa visible between swirling clouds" width="1050" height="1050">
+        <figcaption>Earth from Apollo 17 <span>NASA · 1972</span></figcaption>
+      </figure>
+    </section>
+
+    <section id="trivia" aria-labelledby="trivia-title">
+      <h2 id="trivia-title">Trivia</h2>
+      <div class="questions">
+        <article class="question" id="geography">
+          <img src="images/nile.webp" alt="The Nile Delta seen from orbit in northern Egypt" width="150" height="110">
+          <div>
+            <p class="topic">Geography</p>
+            <h3>Which sea does the Nile flow into?</h3>
+            <details><summary>Reveal answer<span class="sr-only"> for the Nile question</span></summary>
+              <p>The Mediterranean Sea. In northern Egypt the river splits into branches that fan across the Nile Delta before reaching the coast.</p>
+            </details>
+          </div>
+        </article>
+        <article class="question" id="science">
+          <img src="images/jupiter.webp" alt="Jupiter and its pale bands of clouds against black space" width="150" height="110">
+          <div>
+            <p class="topic">Science</p>
+            <h3>What is Jupiter’s Great Red Spot?</h3>
+            <details><summary>Reveal answer<span class="sr-only"> for the Jupiter question</span></summary>
+              <p>A giant, long-lived storm in Jupiter’s atmosphere. The reddish oval sits south of the planet’s equator.</p>
+            </details>
+          </div>
+        </article>
+        <article class="question" id="history">
+          <img src="images/apollo.webp" alt="Astronaut Buzz Aldrin standing on the lunar surface during Apollo 11" width="150" height="110">
+          <div>
+            <p class="topic">History</p>
+            <h3>Which mission first landed people on the Moon?</h3>
+            <details><summary>Reveal answer<span class="sr-only"> for the Moon landing question</span></summary>
+              <p>Apollo 11. Neil Armstrong and Buzz Aldrin landed in July 1969 while Michael Collins remained in lunar orbit.</p>
+            </details>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="categories" aria-labelledby="categories-title">
+      <h2 id="categories-title">Categories</h2>
+      <ul class="category-list">
+        <li><a href="#geography">Geography</a></li>
+        <li><a href="#science">Science</a></li>
+        <li><a href="#history">History</a></li>
+      </ul>
+    </section>
+
+    <section id="scores" aria-labelledby="scores-title">
+      <h2 id="scores-title">Scores</h2>
+      <div class="table-scroll" role="region" aria-label="Example scores, scroll horizontally on small screens" tabindex="0">
+        <table>
+          <caption>Example leaderboard</caption>
+          <thead>
+            <tr><th scope="col">Rank</th><th scope="col">Name</th><th scope="col">Score</th><th scope="col">Country</th><th scope="col">Category</th><th scope="col">Date</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><th scope="row">Olena</th><td>980</td><td>Ukraine</td><td>Science</td><td><time datetime="2026-11-22">22 Nov 2026</time></td></tr>
+            <tr><td>2</td><th scope="row">Mateo</th><td>950</td><td>Spain</td><td>Geography</td><td><time datetime="2026-11-21">21 Nov 2026</time></td></tr>
+            <tr><td>3</td><th scope="row">Hana</th><td>920</td><td>Japan</td><td>History</td><td><time datetime="2026-11-20">20 Nov 2026</time></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="subscribe" aria-labelledby="subscribe-title">
+      <h2 id="subscribe-title">Subscribe</h2>
+      <h3>Puzzle of the Day</h3>
+      <p>Subscribe to see a daily question here when you visit.</p>
+      <button id="subscription" type="button" aria-controls="daily-puzzle">Subscribe to Puzzle of the Day</button>
+      <p class="status" id="subscription-status" role="status"></p>
+      <div id="daily-puzzle" hidden>
+        <p id="daily-question"></p>
+        <details><summary>Reveal today’s answer</summary><p id="daily-answer"></p></details>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Suggest a trivia question or a correction. This practice form checks your entry in your browser.</p>
+      <form id="contact-form">
+        <label for="contact-name">Name</label>
+        <input id="contact-name" name="name" autocomplete="name" required maxlength="80">
+        <label for="contact-email">Email</label>
+        <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="4" required maxlength="2000"></textarea>
+        <button type="submit">Send message</button>
+      </form>
+      <p class="status" id="contact-status" role="status"></p>
+    </section>
+  </main>
+  <footer><div class="footer-inner"><a href="#home">World Trivia</a><span>Photography courtesy of NASA and the Cassini imaging team</span></div></footer>
+</body>
+</html>
